@@ -4,8 +4,8 @@ import time
 from pynput import keyboard
 
 # time key pressed/released
-time_str = time.strftime("%Y-%m-%d:%H-%M-%S")
-logging.basicConfig(filename=f"{time_str}.tsv", level=logging.DEBUG, format='%(asctime)s\t%(message)s')
+time_str = time.strftime("%Y-%m-%d--%H-%M-%S")
+logging.basicConfig(filename=f"{time_str}.kb.tsv", level=logging.DEBUG, format='%(asctime)s\t%(message)s')
 
 
 # Keyboard

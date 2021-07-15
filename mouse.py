@@ -4,8 +4,8 @@ import time
 from pynput import mouse
 
 # time key pressed/released
-time_str = time.strftime("%Y-%m-%d:%H-%M-%S")
-logging.basicConfig(filename=f"{time_str}.tsv", level=logging.DEBUG, format='%(asctime)s\t%(message)s')
+time_str = time.strftime("%Y-%m-%d--%H-%M-%S")
+logging.basicConfig(filename=f"{time_str}.mouse.tsv", level=logging.DEBUG, format='%(asctime)s\t%(message)s')
 
 
 # Mouse
