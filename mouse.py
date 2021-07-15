@@ -20,7 +20,7 @@ def on_click(x, y, button, pressed):
 
 
 def on_scroll(x, y, dx, dy):
-    logging.info(f'{x}\t{y}\tScroll\t({dx, dy})\tMouse')
+    logging.info(f'{x}\t{y}\tScroll\t{dx, dy}\tMouse')
 
 
 with mouse.Listener(on_move=on_move, on_click=on_click, on_scroll=on_scroll) as listener:
