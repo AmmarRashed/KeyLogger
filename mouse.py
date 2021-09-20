@@ -10,7 +10,7 @@ logging.basicConfig(filename=f"{time_str}.mouse.tsv", level=logging.DEBUG, forma
 
 # Mouse
 def on_move(x, y):
-    logging.info("Mouse moved to ({0}, {1})".format(x, y))
+    logging.info(f"{x}\t{y}\tMove\t{None}\tMouse")
 
 
 def on_move_disabled(x, y):
