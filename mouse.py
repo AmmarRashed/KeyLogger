@@ -18,8 +18,7 @@ def on_move_disabled(x, y):
 
 
 def on_click(x, y, button, pressed):
-    if pressed:
-        logging.info(f'{x}\t{y}\tClick\t{button}\tMouse')
+    logging.info(f'{x}\t{y}\t{"Pressed" if pressed else "Released"}\t{button}\tMouse')
 
 
 def on_scroll(x, y, dx, dy):
