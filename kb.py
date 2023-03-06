@@ -17,7 +17,10 @@ def on_press(key):
 
 
 def on_release(key):
-    logging.info(f'{key}\tReleased')
+    try:
+        logging.info(f'{key.char}\tReleased')
+    except AttributeError:
+        logging.info(f'{key}\tReleased')
 
 
 if __name__ == "__main__":
