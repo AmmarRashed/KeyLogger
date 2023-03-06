@@ -1,28 +1,30 @@
 import logging
 import time
 
-from pynput import keyboard
+import keyboard
+from keyboard import KEY_DOWN, KEY_UP
 
 # time key pressed/released
 time_str = time.strftime("%Y-%m-%d--%H-%M-%S")
 logging.basicConfig(filename=f"{time_str}.kb.tsv", level=logging.DEBUG, format='%(asctime)s\t%(message)s')
 
 
-# Keyboard
+def on_action(event):
+    if event.event_type == KEY_DOWN:
+        on_press(event.name)
+
+    elif event.event_type == KEY_UP:
+        on_release(event.name)
+
+
 def on_press(key):
-    try:
-        logging.info(f'{key.char}\tPressed')
-    except AttributeError:
-        logging.info(f'{key}\tPressed')
+    logging.info(f'{key}\tPressed'.lower())
 
 
 def on_release(key):
-    try:
-        logging.info(f'{key.char}\tReleased')
-    except AttributeError:
-        logging.info(f'{key}\tReleased')
+    logging.info(f'{key}\tPressed'.lower())
 
 
-if __name__ == "__main__":
-    with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
-        listener.join()
+keyboard.hook(lambda e: on_action(e))
+
+keyboard.wait()

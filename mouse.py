@@ -18,11 +18,11 @@ def on_move_disabled(x, y):
 
 
 def on_click(x, y, button, pressed):
-    logging.info(f'{x}\t{y}\t{"Pressed" if pressed else "Released"}\t{button}\tMouse')
+    logging.info(f'{x}\t{y}\t{"Pressed" if pressed else "Released"}\t{button}')
 
 
 def on_scroll(x, y, dx, dy):
-    logging.info(f'{x}\t{y}\tScroll\t{dx, dy}\tMouse')
+    logging.info(f'{x}\t{y}\tScroll\t{dx, dy}')
 
 
 if __name__ == "__main__":
