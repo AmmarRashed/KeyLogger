@@ -22,7 +22,7 @@ def on_press(key):
 
 
 def on_release(key):
-    logging.info(f'{key}\tPressed'.lower())
+    logging.info(f'{key}\tReleased'.lower())
 
 
 keyboard.hook(lambda e: on_action(e))
