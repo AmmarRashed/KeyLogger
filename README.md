@@ -1,6 +1,6 @@
-# MouseKeyboardRecorder
+# KeyLogger
 
-A simple script to record mouse and keyboard activities in the background
+A simple script to record mouse, keyboard, and xbox controller key strokes in the background
 
 # Requirements
 ```$
