@@ -19,7 +19,9 @@ EVENT_TYPES = {
     'ABS_HAT0X': 'dpad_x',
     'ABS_HAT0Y': 'dpad_y',
     'ABS_Z': 'left_trigger',
-    'ABS_RZ': 'right_trigger'
+    'ABS_RZ': 'right_trigger',
+    'BTN_SELECT': 'start_button',
+    'BTN_START': 'back_button'
 }
 
 # time key pressed/released
@@ -30,7 +32,7 @@ logging.basicConfig(filename=f"{time_str}.xbox.tsv", level=logging.DEBUG, format
 # Define a function to handle events
 def handle_event(event):
     if event.code in EVENT_TYPES:
-        logging.info(f"{EVENT_TYPES[event.code]}\t{'Pressed' if event.state else 'Released'}")
+        logging.info(f"{EVENT_TYPES[event.code]}\t{event.ev_type}\t{event.state}")
 
 
 while True:
